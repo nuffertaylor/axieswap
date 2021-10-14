@@ -1,0 +1,25 @@
+.axie-container
+{
+  border-style: solid;
+}
+.individual-axie
+{
+  width:200px;
+  height:150px;
+  position:relative;
+}
+.axie-img
+{
+  position:absolute;
+  height:150px;
+  left:0;
+  top:0;
+}
+axie-rate
+{
+  z-index:100;
+  position:absolute;
+  top:55px;
+  left:5px;
+  background:blue;
+}
