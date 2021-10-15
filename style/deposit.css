@@ -1,31 +1,3 @@
-.axie-container
-{
-  border-style: solid;
-}
-.individual-axie
-{
-  width:200px;
-  height:150px;
-  position:relative;
-  display: inline-block;
-  padding: 10px;
-}
-.axie-img
-{
-  position:absolute;
-  height:150px;
-  left:0;
-  top:0;
-}
-.axie-rate
-{
-  z-index:100;
-  position:absolute;
-  top:75px;
-  right:15px;
-  background: white;
-  font-size: larger;
-}
 .confirm-button
 {
   background-color: #4CAF50; /* Green */

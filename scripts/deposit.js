@@ -26,6 +26,7 @@ function populateContainer(containerID, arr)
     rate.addEventListener("input", function() {
       let r = rate.innerHTML;
       r = r.replace(/\D/g,''); //remove nonnumeric chars
+      if(parseInt(r) > 100) r = "100"; //don't allow them to go over 100%
       rate.innerHTML = r + "%"; //this only allows them to add numbers, and only before the %
       updateAxieRate(axie.id, r);
     });
