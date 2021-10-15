@@ -15,11 +15,12 @@
   left:0;
   top:0;
 }
-axie-rate
+.axie-rate
 {
   z-index:100;
   position:absolute;
-  top:55px;
-  left:5px;
-  background:blue;
+  top:75px;
+  right:15px;
+  background: white;
+  font-size: larger;
 }
