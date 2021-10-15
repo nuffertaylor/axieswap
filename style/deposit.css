@@ -7,6 +7,8 @@
   width:200px;
   height:150px;
   position:relative;
+  display: inline-block;
+  padding: 10px;
 }
 .axie-img
 {

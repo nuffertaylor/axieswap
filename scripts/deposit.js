@@ -1,5 +1,4 @@
-//TODO: Allow the percentage to be changed and saved on change.
-
+//TODO: depositaxie button
 var axiesAvailable = 
 [
   {id:1, img:"https://theycb.files.wordpress.com/2020/11/3a15f-05ten9f4x0jgx9dsg.png", rate:"15"},
@@ -7,43 +6,40 @@ var axiesAvailable =
 ]
 var axiesToDeposit = []
 
-function populateAvailableContainer()
+function populateContainer(containerID, arr)
 {
-  let availableContainer = document.getElementById("availableContainer");
-  availableContainer.innerHTML = "";
-  axiesAvailable.forEach(axie => {
+  let container = document.getElementById(containerID);
+  container.innerHTML = "";
+  arr.forEach(axie => {
     let individual = document.createElement("div");
     individual.classList.add("individual-axie");
-    individual.setAttribute( "onclick", "javascript: switchAxie(" + axie.id +");" );
-    availableContainer.appendChild(individual);
+    container.appendChild(individual);
     let image = document.createElement("img");
+    image.setAttribute( "onclick", "javascript: switchAxie(" + axie.id +");" );
     image.classList.add("axie-img");
     image.src = axie.img;
     individual.appendChild(image);
     let rate = document.createElement("div");
     rate.classList.add("axie-rate");
+    rate.contentEditable = "true";
     rate.innerHTML = axie.rate + "%";
+    rate.addEventListener("input", function() {
+      let r = rate.innerHTML;
+      r = r.replace(/\D/g,''); //remove nonnumeric chars
+      rate.innerHTML = r + "%"; //this only allows them to add numbers, and only before the %
+      updateAxieRate(axie.id, r);
+    });
     individual.appendChild(rate);
   });
 }
+
+function populateAvailableContainer()
+{
+  populateContainer("availableContainer", axiesAvailable);
+}
 function populateDepositContainer()
 {
-  let depositContainer = document.getElementById("depositContainer");
-  depositContainer.innerHTML = "";
-  axiesToDeposit.forEach(axie => {
-    let individual = document.createElement("div");
-    individual.classList.add("individual-axie");
-    individual.setAttribute( "onclick", "javascript: switchAxie(" + axie.id +");" );
-    depositContainer.appendChild(individual);
-    let image = document.createElement("img");
-    image.classList.add("axie-img");
-    image.src = axie.img;
-    individual.appendChild(image);
-    let rate = document.createElement("div");
-    rate.classList.add("axie-rate");
-    rate.innerHTML = axie.rate + "%";
-    individual.appendChild(rate);
-  });
+  populateContainer("depositContainer", axiesToDeposit);
 }
 function populateContainers()
 {
@@ -51,31 +47,43 @@ function populateContainers()
   populateDepositContainer();
 }
 
+function findAxieIndexById(arr, id)
+{
+  for(let i = 0; i < arr.length; i++)
+      if(arr[i].id == id)
+        return i;
+  return false;
+}
+
 function switchAxie(id)
 {
-  let found = false;
-  for(let i = 0; i < axiesAvailable.length; i++)
+  let axieIndex = findAxieIndexById(axiesAvailable, id);
+  if(axieIndex !== false)
   {
-      if(axiesAvailable[i].id == id)
-      {
-        found = true;
-        axiesToDeposit.push(axiesAvailable[i]);
-        axiesAvailable.splice(i, 1);
-        break;
-      }
+    axiesToDeposit.push(axiesAvailable[axieIndex]);
+    axiesAvailable.splice(axieIndex, 1);
   }
-  if(!found)
+  else //then check axiesToDeposit
   {
-    for(let i = 0; i < axiesToDeposit.length; i++)
-    {
-        if(axiesToDeposit[i].id == id)
-        {
-          axiesAvailable.push(axiesToDeposit[i]);
-          axiesToDeposit.splice(i, 1);
-        }
-    }
+    axieIndex = findAxieIndexById(axiesToDeposit, id);
+    axiesAvailable.push(axiesToDeposit[axieIndex]);
+    axiesToDeposit.splice(axieIndex, 1);
   }
   populateContainers();
+}
+
+function updateAxieRate(axieID, rate)
+{
+  let axieIndex = findAxieIndexById(axiesAvailable, axieID);
+  if(axieIndex !== false)
+  {
+    axiesAvailable[axieIndex].rate = rate;
+  }
+  else
+  {
+      axieIndex = findAxieIndexById(axiesToDeposit, axieID);
+      axiesToDeposit[axieIndex].rate = rate;
+  }
 }
 
 function depositAxies()
@@ -84,5 +92,4 @@ function depositAxies()
   //send message to verify user wishes to deposit
   //push confirmation of transaction to wallet
   //remove axies
-  //display message if transaction succeeded or failed
 }
