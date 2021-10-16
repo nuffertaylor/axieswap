@@ -1,4 +1,3 @@
-//TODO: depositaxie button
 var axiesAvailable = 
 [
   {id:1, img:"https://theycb.files.wordpress.com/2020/11/3a15f-05ten9f4x0jgx9dsg.png", rate:"15"},
@@ -21,8 +20,8 @@ function populateContainer(containerID, arr)
     individual.appendChild(image);
     let rate = document.createElement("div");
     rate.classList.add("axie-rate");
-    rate.contentEditable = "true";
     rate.innerHTML = axie.rate + "%";
+    rate.contentEditable = "true";
     rate.addEventListener("input", function() {
       let r = rate.innerHTML;
       r = r.replace(/\D/g,''); //remove nonnumeric chars

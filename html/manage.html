@@ -4,46 +4,23 @@
     <link rel="stylesheet" href="../style/manage.css">
     <script src="../scripts/manage.js"></script>
   </head>
-  <body onload="populate()">
+  <body onload="init()">
     <h1>Manage</h1>
     <div class="earnings-div">
       <div class="earnings-div">
         <span class="earnings-title">Total Earnings:</span>
-        <span id="total">200 SLP</span>
+        <span id="total"></span>
       </div>
       <div class="earnings-div">
         <span class="earnings-title">Recent Earnings:</span>
-        <span id="recent">23 SLP</span>
+        <span id="recent"></span>
       </div>
-      <div class="claim-button">Claim</div>
+      <div class="confirm-button" onclick="claimRecentEarnings()">Claim</div>
     </div>
 
     <div class="container">
       <span>Active Axies</span>
-      <div class="axie-container" id="active-axies">
-        <div class="individual-axie">
-          <img src="https://theycb.files.wordpress.com/2020/11/3a15f-05ten9f4x0jgx9dsg.png" class="axie-img">
-          <div class="axie-rate">15%</div>
-        </div>
-        <div class="individual-axie">
-          <div class="text-line">
-            <span>Currently being used by:</span>
-            <span id="curUser">phillybuster</span>
-          </div>
-          <div class="text-line">
-            <span>Total Earnings:</span>
-            <span id="totalEarnAxie1">26 SLP</span>
-          </div>
-          <div class="text-line">
-            <span>Recent Earnings:</span>
-            <span id="recentEarnAxie1">5 SLP</span>
-          </div>
-          <div class="text-line">
-            <span>Estimated Axie Value:</span>
-            <span id="recentEarnAxie1">.1 ETH</span>
-          </div>
-        </div>
-      </div>
+      <div class="axie-container" id="active-axies"></div>
     </div>
   </body>
 </html>
