@@ -1,8 +1,10 @@
 <html>
     <head>
         <link rel="stylesheet" href="../style/nav.css">
+        <link rel="stylesheet" href="../style/general.css">
+        <script src="../scripts/build_team.js"></script>
     </head>
-    <body>
+    <body onload="populateAvailableContainer()">
         <header>
             <h1 class="logo"><a href="../../index.html">Axie Swap</a></h1>
             <ul class="nav">
@@ -13,5 +15,15 @@
                 <li class="navlink"><a href="../html/my_team.html">My Team</a></li>
             </ul>
         </header>
+        <div class="first_line">
+            <h2 class="page_name">Build Team</h2>
+            <button>Cart</button>
+        </div>
+        
+        <button>Type</button>
+        <button>Sort</button>
+
+        <div class="axie-container" id="availableContainer"></div>
+
     </body>
 </html>

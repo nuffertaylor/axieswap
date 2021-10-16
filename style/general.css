@@ -39,3 +39,8 @@
   cursor: pointer;
   user-select: none; 
 }
+
+.first_line
+{
+  display: inline-block;
+}
