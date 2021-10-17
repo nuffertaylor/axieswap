@@ -1,9 +1,12 @@
 <html>
     <head>
+        <link rel="stylesheet" href="../style/general.css">
         <link rel="stylesheet" href="../style/nav.css">
-    </head>
+        <link rel="stylesheet" href="../style/manage.css">
+        <script src="../scripts/withdraw.js"></script>
 
-    <body>
+    </head>
+    <body onload="populateContainers()">
         <header>
             <h1 class="logo"><a href="../../index.html">Axie Swap</a></h1>
             <ul class="nav">
@@ -14,5 +17,27 @@
                 <li class="navlink"><a href="../html/my_team.html">My Team</a></li>
             </ul>
         </header>
+
+        <h1>My Team</h1>
+        <div class="earnings-div">
+            <div class="earnings-div">
+                <span class="earnings-title">Total Earnings:</span>
+                <span id="total"></span>
+            </div>
+            <div class="earnings-div">
+                <span class="earnings-title">Recent Earnings:</span>
+                <span id="recent"></span>
+            </div>
+        </div>
+        <div class="container">
+            <span>My Axies</span>
+            <div class="axie-container" id="availableContainer"></div>
+        </div>
+        <div class="container">
+            <div class=axie-container id="withdrawContainer"></div>
+        </div>
+        <div class="container">
+            <div class="confirm-button" onclick="withdrawAxies()">Withdraw</div>
+        </div>
     </body>
 </html>
