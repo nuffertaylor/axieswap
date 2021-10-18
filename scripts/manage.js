@@ -5,8 +5,8 @@ var activeAxies =
 ]
 var axieData = 
 [
-  {id:1, currentUser: "phillybuster" ,totalEarned:78, recentEarned:14, approxAxieValue:.1},
-  {id:1, currentUser: "marlowe" ,totalEarned:232, recentEarned:17, approxAxieValue:.092}
+  {id:1, currentUser: "phillybuster" ,totalEarned:78, recentEarned:14, approxAxieValue:.1, show:false},
+  {id:2, currentUser: "marlowe" ,totalEarned:232, recentEarned:17, approxAxieValue:.092, show:false}
 ];
 
 var totalEarnings = 0;
@@ -38,9 +38,14 @@ function populate()
     //first append the axie
     let individual = document.createElement("div");
     individual.classList.add("individual-axie");
+    individual.setAttribute( "onclick", "javascript: showStats(" + activeAxies[i].id +");" );
+    let statsOverlay = document.createElement("div");
+    statsOverlay.classList.add("overlay");
+    statsOverlay.innerHTML = "Show Stats";
+    statsOverlay.style.display = "none";
+    individual.appendChild(statsOverlay);
     container.appendChild(individual);
     let image = document.createElement("img");
-    image.setAttribute( "onclick", "javascript: showStats(" + activeAxies[i].id +");" );
     image.classList.add("axie-img");
     image.src = activeAxies[i].img;
     individual.appendChild(image);
@@ -49,9 +54,8 @@ function populate()
     rate.innerHTML = activeAxies[i].rate + "%";
     individual.appendChild(rate);
 
-    //then append the axie's stats, but hide it. we'll reveal onclick
     let stats = document.createElement("div");
-    stats.classList.add("individual-axie");
+    stats.classList.add("axie-stats");
     container.appendChild(stats);
     let line0 = document.createElement("div");
     line0.classList.add("text-line");
@@ -77,6 +81,10 @@ function populate()
     let span3 = document.createElement("span");
     span3.innerHTML = "Approximate Value: " + axieData[i].approxAxieValue + "ETH";
     line3.appendChild(span3);
+    if(axieData[i].show) 
+    { stats.style.display = "block"; }
+    else
+    { stats.style.display = "none"; }
   }
 }
 
@@ -93,9 +101,15 @@ function init()
 
 function showStats(axieID)
 {
-  //hide all stats divs
-  //reveal one for appropiate axie
-  console.log("showing stats");
+  console.log("attempting to show stats for axie #" + axieID);
+  axieData.forEach(axie => 
+  {
+    if(axie.id == axieID)
+      axie.show = true;
+    else
+      axie.show = false;
+  });
+  populate();
 }
 
 function claimRecentEarnings()

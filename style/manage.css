@@ -1,0 +1,26 @@
+.individual-axie:hover
+{
+  filter: blur(5px);
+  cursor: pointer;
+}
+.individual-axie:hover .overlay
+{
+  display: block;
+}
+
+.axie-stats /*for now this is identical to indivdual-axie*/
+{
+  width:200px;
+  height:150px;
+  position:relative;
+  display: inline-block;
+  padding: 10px;
+  background-color: #036199;
+  border-radius: 15px;
+}
+
+.overlay /*THIS NEEDS TO BE CENTERED VERTICALLY/HORIZONTALLY IN individual-axie*/
+{
+text-align: center;
+background-color: green;
+}
