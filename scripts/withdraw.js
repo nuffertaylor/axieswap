@@ -1,8 +1,8 @@
 //TODO: withdrawaxie button
 var axiesAvailable = 
 [
-  {id:1, img:"https://theycb.files.wordpress.com/2020/11/3a15f-05ten9f4x0jgx9dsg.png", rate:"15"},
-  {id:2, img:"https://theycb.files.wordpress.com/2020/12/december-surprise.png", rate:"15"}
+  {id:1, img:"../images/axie03.png", rate:"16"},
+  {id:2, img:"../images/axie04.png", rate:"13"}
 ]
 var axiesToWithdraw = []
 

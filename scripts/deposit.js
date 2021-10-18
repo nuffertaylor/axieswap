@@ -1,8 +1,10 @@
 var axiesAvailable = 
 [
-  {id:1, img:"https://theycb.files.wordpress.com/2020/11/3a15f-05ten9f4x0jgx9dsg.png", rate:"15"},
-  {id:2, img:"https://theycb.files.wordpress.com/2020/12/december-surprise.png", rate:"15"}
+  {id:1, img:"../images/axie01.png", rate:"15"},
+  {id:2, img:"../images/axie02.png", rate:"15"}
 ]
+//"https://theycb.files.wordpress.com/2020/11/3a15f-05ten9f4x0jgx9dsg.png"
+// "https://theycb.files.wordpress.com/2020/12/december-surprise.png"
 var axiesToDeposit = []
 
 function populateContainer(containerID, arr)
