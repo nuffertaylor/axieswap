@@ -18,15 +18,15 @@ function calcEarnings()
   recentEarnings = 0;
   axieData.forEach(d => {
     //we'll increment earnings here to simulate growth
-    d.totalEarned += Math.random();
-    d.recentEarned += Math.random();
+    d.totalEarned += Math.random() / 1000;
+    d.recentEarned += Math.random() / 1000;
     //calculate the total
     totalEarnings += d.totalEarned;
     recentEarnings += d.recentEarned;
   });
   //apply our calculations to the page
-  document.getElementById("total").innerHTML = totalEarnings.toFixed(2) + " SLP";
-  document.getElementById("recent").innerHTML = recentEarnings.toFixed(2) + " SLP";
+  document.getElementById("total").innerHTML = totalEarnings.toFixed(5) + " SLP";
+  document.getElementById("recent").innerHTML = recentEarnings.toFixed(5) + " SLP";
 }
 
 function populate()
@@ -63,13 +63,13 @@ function populate()
     line1.classList.add("text-line");
     stats.appendChild(line1);
     let span1 = document.createElement("span");
-    span1.innerHTML = "Total Earnings: " + axieData[i].totalEarned.toFixed(2) + " SLP";
+    span1.innerHTML = "Total Earnings: " + axieData[i].totalEarned.toFixed(5) + " SLP";
     line1.appendChild(span1);
     let line2 = document.createElement("div");
     line2.classList.add("text-line");
     stats.appendChild(line2);
     let span2 = document.createElement("span");
-    span2.innerHTML = "Recent Earnings: " + axieData[i].recentEarned.toFixed(2) + " SLP";
+    span2.innerHTML = "Recent Earnings: " + axieData[i].recentEarned.toFixed(5) + " SLP";
     line2.appendChild(span2);
     let line3 = document.createElement("div");
     line3.classList.add("text-line");

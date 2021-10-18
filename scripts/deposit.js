@@ -23,6 +23,7 @@ function populateContainer(containerID, arr)
     rate.innerHTML = axie.rate + "%";
     rate.contentEditable = "true";
     rate.addEventListener("input", function() {
+      //TODO: this unfortunately makes all numbers you type go backwards, fix
       let r = rate.innerHTML;
       r = r.replace(/\D/g,''); //remove nonnumeric chars
       if(parseInt(r) > 100) r = "100"; //don't allow them to go over 100%
