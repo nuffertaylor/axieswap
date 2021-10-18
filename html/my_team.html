@@ -1,43 +1,41 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="../style/general.css">
-        <link rel="stylesheet" href="../style/nav.css">
-        <link rel="stylesheet" href="../style/manage.css">
-        <script src="../scripts/withdraw.js"></script>
+<head>
+    <link rel="stylesheet" href="../style/general.css">
+    <link rel="stylesheet" href="../style/my_team.css">
+    <link rel="stylesheet" href="../style/nav.css">
+    <script src="../scripts/my_team.js"></script>
+</head>
+<body onload="init()">
+<header>
+    <div class="logo"><h1><a href="../index.html"><img src="../images/axieOutline.png">AxieSwap</a></h1></div>
+    <ul class="nav">
+        <li class="navlink"><a href="../html/deposit.html">Deposit</a></li>
+        <li class="navlink"><a href="../html/withdraw.html">Withdraw</a></li>
+        <li class="navlink"><a href="../html/manage.html">Manage</a></li>
+        <li class="navlink"><a href="../html/build_team.html">Build Team</a></li>
+        <li class="navlink"><a href="../html/my_team.html">My Team</a></li>
+    </ul>
+</header>
+<h1>My Team</h1>
+<div class="earnings-div">
+    <div class="earnings-div">
+        <span class="earnings-title">Total Earnings:</span>
+        <span id="total"></span>
+    </div>
+    <div class="earnings-div">
+        <span class="earnings-title">Recent Earnings:</span>
+        <span id="recent"></span>
+    </div>
+    <div class="earnings-div">
+        <span class="earnings-title">Percent Earnings:</span>
+        <span id="percent"></span>
+    </div>
+    <div class="confirm-button" onclick="claimRecentEarnings()">Claim SLP</div>
+</div>
 
-    </head>
-    <body onload="populateContainers()">
-        <header>
-            <div class="logo"><h1><a href="../index.html"><img src="../images/axieOutline.png">AxieSwap</a></h1></div>
-            <ul class="nav">
-                <li class="navlink"><a href="../html/deposit.html">Deposit</a></li>
-                <li class="navlink"><a href="../html/withdraw.html">Withdraw</a></li>
-                <li class="navlink"><a href="../html/manage.html">Manage</a></li>
-                <li class="navlink"><a href="../html/build_team.html">Build Team</a></li>
-                <li class="navlink"><a href="../html/my_team.html">My Team</a></li>
-            </ul>
-        </header>
-
-        <h1>My Team</h1>
-        <div class="earnings-div">
-            <div class="earnings-div">
-                <span class="earnings-title">Total Earnings:</span>
-                <span id="total"></span>
-            </div>
-            <div class="earnings-div">
-                <span class="earnings-title">Recent Earnings:</span>
-                <span id="recent"></span>
-            </div>
-        </div>
-        <div class="container">
-            <span>My Axies</span>
-            <div class="axie-container" id="availableContainer"></div>
-        </div>
-        <div class="container">
-            <div class=axie-container id="withdrawContainer"></div>
-        </div>
-        <div class="container">
-            <div class="confirm-button" onclick="withdrawAxies()">Withdraw</div>
-        </div>
-    </body>
+<div class="container">
+    <span>Active Axies</span>
+    <div class="axie-container" id="active-axies"></div>
+</div>
+</body>
 </html>
