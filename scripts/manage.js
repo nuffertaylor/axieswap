@@ -39,6 +39,7 @@ function populate()
     let individual = document.createElement("div");
     individual.classList.add("individual-axie");
     individual.setAttribute( "onclick", "javascript: showStats(" + activeAxies[i].id +");" );
+    if(axieData[i].show) individual.classList.add("selected");
     let statsOverlay = document.createElement("div");
     statsOverlay.classList.add("overlay");
     statsOverlay.innerHTML = "Show Stats";
@@ -55,6 +56,7 @@ function populate()
 
     let stats = document.createElement("div");
     stats.classList.add("axie-stats");
+    stats.classList.add("selected");
     container.appendChild(stats);
     let line0 = document.createElement("div");
     line0.classList.add("text-line");
