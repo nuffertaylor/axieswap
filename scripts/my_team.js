@@ -119,7 +119,7 @@ function replaceAxie(axieID)
             }
             populate();
             console.log("Replacing Axie");
-            alert("Successfully withdrawn your Axie to wallet 0xc0ffee...4979");
+            alert("Successfully replaced your Axie!");
                   }, 2000);
               }
 
