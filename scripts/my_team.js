@@ -1,12 +1,17 @@
 var activeAxies = 
 [
-  {id:1, img:"https://theycb.files.wordpress.com/2020/11/3a15f-05ten9f4x0jgx9dsg.png", rate:"15"},
-  {id:2, img:"https://theycb.files.wordpress.com/2020/12/december-surprise.png", rate:"19"}
+   {id:1, img:"../images/axie05.png", rate:"15"},
+   {id:2, img:"../images/axie06.png", rate:"19"},
+   {id:3, img:"../images/axie04.png", rate:"16"}
+
+
 ]
 var axieData = 
 [
   {id:1, currentUser: "phillybuster" ,totalEarned:78, recentEarned:14, approxAxieValue:.1},
-  {id:1, currentUser: "marlowe" ,totalEarned:232, recentEarned:17, approxAxieValue:.092}
+  {id:2, currentUser: "marlowe" ,totalEarned:232, recentEarned:17, approxAxieValue:.092},
+  {id:3, currentUser: "robert" ,totalEarned:117, recentEarned:15, approxAxieValue:.096}
+
 ];
 
 var totalEarnings = 0;
@@ -63,34 +68,7 @@ function populate()
     rate.innerHTML = activeAxies[i].rate + "%";
     individual.appendChild(rate);
 
-    //then append the axie's stats, but hide it. we'll reveal onclick
-    let stats = document.createElement("div");
-    stats.classList.add("individual-axie");
-    container.appendChild(stats);
-    let line0 = document.createElement("div");
-    line0.classList.add("text-line");
-    stats.appendChild(line0);
-    let span0 = document.createElement("span");
-    span0.innerHTML = "Currently being used by: " + axieData[i].currentUser;
-    line0.appendChild(span0);
-    let line1 = document.createElement("div");
-    line1.classList.add("text-line");
-    stats.appendChild(line1);
-    let span1 = document.createElement("span");
-    span1.innerHTML = "Total Earnings: " + axieData[i].totalEarned.toFixed(5) + " SLP";
-    line1.appendChild(span1);
-    let line2 = document.createElement("div");
-    line2.classList.add("text-line");
-    stats.appendChild(line2);
-    let span2 = document.createElement("span");
-    span2.innerHTML = "Recent Earnings: " + axieData[i].recentEarned.toFixed(5) + " SLP";
-    line2.appendChild(span2);
-    let line3 = document.createElement("div");
-    line3.classList.add("text-line");
-    stats.appendChild(line3);
-    let span3 = document.createElement("span");
-    span3.innerHTML = "Approximate Value: " + axieData[i].approxAxieValue + "ETH";
-    line3.appendChild(span3);
+
   }
 }
 
