@@ -3,28 +3,46 @@
     <head>
         <link rel="stylesheet" href="./style/nav.css">
         <link rel="stylesheet" href="./style/general.css">
+        <script src="./scripts/nav.js"></script>
     </head>
     <body>
         <title>AxieSwap</title>
         <header>
             <div class="logo"><h1><a href="index.html"><img src="images/axieOutline.png">AxieSwap</a></h1></div>
             
-            <ul class="nav">
-                <li class="navlink"><a href="html/deposit.html">Deposit</a></li>
-                <li class="navlink"><a href="html/withdraw.html">Withdraw</a></li>
-                <li class="navlink"><a href="html/manage.html">Manage</a></li>
-                <li class="navlink"><a href="html/build_team.html">Build Team</a></li>
-                <li class="navlink"><a href="html/my_team.html">My Team</a></li>
-            </ul>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="myFunction('myDropdown')">Players
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <li class="navlink"><a href="html/build_team.html">Build Team</a></li>
+                    <li class="navlink"><a href="html/my_team.html">My Team</a></li>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn" onclick="myFunction('managers')">Managers
+                </button>
+                <div class="dropdown-content" id="managers">
+                    <li class="navlink"><a href="html/deposit.html">Deposit</a></li>
+                    <li class="navlink"><a href="html/withdraw.html">Withdraw</a></li>
+                    <li class="navlink"><a href="html/manage.html">Manage</a></li>
+                </div>
+            </div>
+
+            <button class="wallet-button">Connect Wallet</button>
         </header>
 
         <div class="main">
-            <p>
+            <style>
+                .big {font-size: 30px;}
+                .bigger {font-size: 45px;}
+            </style>
+            <p style="font-size: 45px;">
                 Welcome to AxieSwap! Here you will find the most wonderful
                 collection of Axies to rent you ever did see!
             </p>
 
-            <p>
+            <p style="font-size: 30px;">
                 Click on "Deposit" above to allow other users to rent your Axies, and
                 make money while even while you're asleep!
                 Alternitively, if you want to get some Axies yourself, click 

@@ -17,6 +17,12 @@
   border-radius: 15px;
 }
 
+.selected
+{
+  border: solid;
+  border-color: snow;
+}
+
 .overlay /*THIS NEEDS TO BE CENTERED VERTICALLY/HORIZONTALLY IN individual-axie*/
 {
   text-align: center;
