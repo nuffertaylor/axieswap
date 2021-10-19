@@ -42,7 +42,6 @@ function populate()
     let statsOverlay = document.createElement("div");
     statsOverlay.classList.add("overlay");
     statsOverlay.innerHTML = "Show Stats";
-    statsOverlay.style.display = "none";
     individual.appendChild(statsOverlay);
     container.appendChild(individual);
     let image = document.createElement("img");
