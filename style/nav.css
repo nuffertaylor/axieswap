@@ -94,5 +94,5 @@ display: none;
   }
 
   .dropdown:hover .dropbtn, .dropbtn:focus {
-    background-color: red;
+    background-color: rgb(47, 61, 255);
   }
