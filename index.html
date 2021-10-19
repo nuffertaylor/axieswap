@@ -3,19 +3,31 @@
     <head>
         <link rel="stylesheet" href="./style/nav.css">
         <link rel="stylesheet" href="./style/general.css">
+        <script src="./scripts/nav.js"></script>
     </head>
     <body>
         <title>AxieSwap</title>
         <header>
             <div class="logo"><h1><a href="index.html"><img src="images/axieOutline.png">AxieSwap</a></h1></div>
             
-            <ul class="nav">
-                <li class="navlink"><a href="html/deposit.html">Deposit</a></li>
-                <li class="navlink"><a href="html/withdraw.html">Withdraw</a></li>
-                <li class="navlink"><a href="html/manage.html">Manage</a></li>
-                <li class="navlink"><a href="html/build_team.html">Build Team</a></li>
-                <li class="navlink"><a href="html/my_team.html">My Team</a></li>
-            </ul>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="myFunction('myDropdown')">Players
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <li class="navlink"><a href="html/build_team.html">Build Team</a></li>
+                    <li class="navlink"><a href="html/my_team.html">My Team</a></li>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn" onclick="myFunction('managers')">Managers
+                </button>
+                <div class="dropdown-content" id="managers">
+                    <li class="navlink"><a href="html/deposit.html">Deposit</a></li>
+                    <li class="navlink"><a href="html/withdraw.html">Withdraw</a></li>
+                    <li class="navlink"><a href="html/manage.html">Manage</a></li>
+                </div>
+            </div>
         </header>
 
         <div class="main">
