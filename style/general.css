@@ -8,9 +8,11 @@ body
 }
 .axie-container
 {
-  /* border-style: solid;
-  border-radius: 10px;
-  background-color: #003399; */
+  padding:10px;
+}
+.container
+{
+  padding-left: 10px;
 }
 
 .individual-axie
@@ -22,6 +24,7 @@ body
   padding: 10px;
   background-color: #036199;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .axie-img
@@ -40,6 +43,7 @@ body
   background: white;
   font-size: larger;
   color: black;
+  cursor: text;
 }
 
 .confirm-button

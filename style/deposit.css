@@ -1,0 +1,8 @@
+.individual-axie img
+{
+  transition: transform .2s;
+}
+.individual-axie:hover img
+{
+  transform: scale(1.5);
+}

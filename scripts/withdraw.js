@@ -85,7 +85,7 @@ function withdrawAxies()
       axiesToWithdraw = [];
       populateContainers();
       //notify user of success
-      alert("successfully withdrawn your" + axieStr);
+      alert("Successfully withdrawn your" + axieStr + " to wallet 0xc0ffee...4979");
       }, 5000);
   }
 }
