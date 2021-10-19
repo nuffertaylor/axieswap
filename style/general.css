@@ -8,6 +8,8 @@ body
 .axie-container
 {
   padding:10px;
+  height: 225px;
+  display: inline-flex;
 }
 .container
 {
