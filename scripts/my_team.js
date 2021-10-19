@@ -48,8 +48,12 @@ function populate()
     individual.classList.add("individual-axie");
     container.appendChild(individual);
     let image = document.createElement("img");
-    image.setAttribute( "onclick", "javascript: showStats(" + activeAxies[i].id +");" );
-    image.setAttribute( "onhover", "javascript: showReplaceOption(" + activeAxies[i].id +");" );
+    image.setAttribute( "onclick", "javascript: replaceAxie(" + activeAxies[i].id +");" );
+
+    let replaceOverlay = document.createElement("div");
+    replaceOverlay.classList.add("overlay");
+    replaceOverlay.innerHTML = "Replace";
+    individual.appendChild(replaceOverlay);
 
     image.classList.add("axie-img");
     image.src = activeAxies[i].img;
@@ -101,22 +105,33 @@ function init()
   }, 1000);
 }
 
-function showStats(axieID)
+function replaceAxie(axieID)
 {
-  //hide all stats divs
-  //reveal one for appropiate axie
-  console.log("showing stats");
+    if(confirm("Are you sure you want to replace this Axie?"))
+    {
+            //push confirmation of transaction to wallet
+            //we'll simulate this by waiting 5 seconds before removing the axies
+        setTimeout(() => {
+            let axieIndex = findAxieIndexById(activeAxies, axieID);
+            if(axieIndex !== false)
+            {
+                activeAxies.splice(axieIndex, 1);
+            }
+            populate();
+            console.log("Replacing Axie");
+            alert("Successfully withdrawn your Axie to wallet 0xc0ffee...4979");
+                  }, 2000);
+              }
+
 }
 
-function showReplaceOption(axieID)
+function findAxieIndexById(arr, id)
 {
-  let axieIndex = findAxieIndexById(activeAxies, axieID);
-  if(axieIndex !== false)
-  {
-    activeAxies.splice(axieIndex, 1);
-  }
-  populate();
-  }
+  for(let i = 0; i < arr.length; i++)
+      if(arr[i].id == id)
+        return i;
+  return false;
+}
 
 function claimRecentEarnings()
 {
