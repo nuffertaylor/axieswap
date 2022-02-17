@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-axieswap-dev-202235-authRole",
+      "UnauthRoleArn": "arn:aws:iam::988927114710:role/amplify-axieswap-dev-202235-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::988927114710:role/amplify-axieswap-dev-202235-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-axieswap-dev-202235-deployment",
+      "UnauthRoleName": "amplify-axieswap-dev-202235-unauthRole",
+      "StackName": "amplify-axieswap-dev-202235",
+      "StackId": "arn:aws:cloudformation:us-west-1:988927114710:stack/amplify-axieswap-dev-202235/dda4d7f0-8fa0-11ec-8edc-0263cb9751d3",
+      "AmplifyAppId": "d2nch5sncwrx0"
+    }
+  }
+}
